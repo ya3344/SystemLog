@@ -1,7 +1,5 @@
 #include "pch.h"
 #include "Log.h"
-#include <string>
-
 
 TCHAR* Log::GetTimeStamp(const TCHAR* title)
 {
@@ -27,7 +25,7 @@ void Log::WriteLog(const TCHAR* title, const BYTE logLevel,const TCHAR* funcName
 	TCHAR levelBuffer[15];
 	TCHAR strBuffer[512];
 	static DWORD count = 0;
-	unsigned int fileDataLength = 0;
+	size_t fileDataLength = 0;
 
 	timer = time(NULL);
 	localtime_s(&timeInfo, &timer);
